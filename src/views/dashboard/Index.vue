@@ -39,7 +39,7 @@
     .da-index{
         display: flex;
         justify-content:center;
-        background-color: #66a9a3;
+        /*background-color: #66a9a3;*/
         .content{
 
         }

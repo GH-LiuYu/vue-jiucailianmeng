@@ -85,8 +85,9 @@
   }
 
   .el-main{
-      width: 67%;
+      width:100%;
       margin: auto;
+      padding: 0;
   }
   .el-footer {
       background-color: #b3c0d1;
