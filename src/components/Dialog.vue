@@ -13,8 +13,10 @@
         <div class="search">
           <div style="margin-top: 15px;">
             <el-input placeholder="代码：600519,GZMT,贵州茅台" v-model="input" class="input-with-select">
-              <el-button slot="append" icon="el-icon-search"></el-button>
+              <template slot="prepend"><h1>哪个会涨？？</h1></template>
+              <el-button slot="append">提交</el-button>
             </el-input>
+
           </div>
         </div>
         <el-col :span="2" v-for="(o, index) in 168" :key="o">
@@ -75,7 +77,6 @@ export default {
     width: 50%;
     height: 63px;
     position: absolute;
-    /*background-color: blueviolet;*/
     top:39%;
     left:50%;
     margin-top: 2px;
