@@ -8,10 +8,18 @@
             center="true"
 :showClose="showClo"
     >
+
       <el-row >
-        <el-col :span="2" v-for="(o, index) in 20" :key="o">
+        <div class="search">
+          <div style="margin-top: 15px;">
+            <el-input placeholder="代码：600519,GZMT,贵州茅台" v-model="input" class="input-with-select">
+              <el-button slot="append" icon="el-icon-search"></el-button>
+            </el-input>
+          </div>
+        </div>
+        <el-col :span="2" v-for="(o, index) in 168" :key="o">
           <el-card :body-style="{ padding: '0px' }" style="margin: 3px;">
-            <div style="padding: 14px;background-color: red;background-image:linear-gradient(90deg, #d62020,#00cca6)">
+            <div style="padding: 0px;background-color: red;background-image:linear-gradient(90deg, #d62020,#00cca6)">
               <span>好吃的汉堡</span>
               <div class="bottom clearfix">
                 <time class="time">{{ currentDate }}</time>
@@ -21,7 +29,9 @@
           </el-card>
         </el-col>
       </el-row>
+
     </el-dialog>
+
   </div>
 </template>
 
@@ -30,7 +40,8 @@ export default {
   data() {
     return {
       dialogVisible: true,
-showClo:false,
+      showClo:false,
+      input:'',
       colorList:[
         {color:'linear-gradient(90deg, #d62020,#00cca6)',back:'green'},
         {color:'linear-gradient(90deg, #d62020,#00cca6)',back:'green'},
@@ -54,23 +65,32 @@ showClo:false,
 </script>
 
 <style lang="scss" scoped>
-  .dialog >>>.el-dialog__wrapper {
-    /*background-color:rgba(0,0,0,0.8);*/
-    /*opacity:8%;*/
+  .input-with-select>>>.el-input__inner{
+    height: 62px!important;
+  }
+  .el-input-group{
+    margin-top: -15px;
+  }
+  .search{
+    width: 50%;
+    height: 63px;
+    position: absolute;
+    /*background-color: blueviolet;*/
+    top:39%;
+    left:50%;
+    margin-top: 2px;
+    transform:translate(-50%,-50%);
 
   }
   .el-dialog--center .el-dialog__body{
     padding: 0;
   }
-  .el-dialog__header{
-    display:none!important;
-    /*padding: 0!important;*/
+  .el-dialog__wrapper>>>.el-dialog__header{
+    display:none;
   }
   .d-dialog{
-    /*background-color: black;*/
     .el-row{
-      margin: -20px;
-    /*background-color:black;*/
+     margin: -27px;
       .el-card{
         -moz-box-shadow:4px 3px 4px #635858;
         -webkit-box-shadow:4px 3px 4px #635858;
@@ -78,41 +98,11 @@ showClo:false,
     }
   }
   }
+  .el-dialog__wrapper>>>el-dialog__body{
+    padding: 0!important;
+  }
+  .el-dialog__wrapper>>>el-dialog--center .el-dialog__body{
+    padding: 0!important;
+  }
 </style>
 
-
-<!--<template>-->
-<!--  <div class="popContainer">-->
-<!--        <el-dialog-->
-<!--                :visible.sync="dialogVisible"-->
-<!--                width="30%"-->
-<!--                :before-close="handleClose"-->
-<!--                fullscreen="true"-->
-<!--                center="true"-->
-<!--        >-->
-<!--          <el-row >-->
-<!--            <el-col :span="2" v-for="(o, index) in 10" :key="o">-->
-<!--              <el-card :body-style="{ padding: '0px' }" style="margin: 3px;">-->
-<!--                <div style="padding: 14px;background-color: red;background-image:linear-gradient(90deg, #d62020,#00cca6)">-->
-<!--                  <span>好吃的汉堡</span>-->
-<!--                  <div class="bottom clearfix">-->
-<!--                    <time class="time">{{ currentDate }}</time>-->
-<!--                    <el-button type="text" class="button">操作按钮</el-button>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </el-card>-->
-<!--            </el-col>-->
-<!--          </el-row>-->
-<!--        </el-dialog>-->
-<!--  </div>-->
-<!--</template>-->
-<!--<style>-->
-<!--  .popContainer{-->
-<!--    position: fixed;-->
-<!--    top: 0;-->
-<!--    left: 0;-->
-<!--    right: 0;-->
-<!--    bottom: 0;-->
-<!--    background: rgba(0,0,0,0.3);-->
-<!--  }-->
-<!--</style>-->
